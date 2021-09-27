@@ -1,0 +1,16 @@
+{% extends 'basic.html' %}
+{% block content %}
+    <div class='row'>
+        <h1>{{topic}}</h1>
+    </div>
+
+    {% for i in subtopics %}
+        <div class='row my-4'>
+            <div class="card">
+            <a href="{% url 'subtopic' i.id %}" style="color:black;"><h5 class="card-header">{{i}}</h5></a>
+            
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}

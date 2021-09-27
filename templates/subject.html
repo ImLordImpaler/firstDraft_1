@@ -1,0 +1,30 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block content %}
+    <div class='container-fluid'>
+        <div class='row'>
+            <h1>{{subject.name}}</h1>
+        </div>
+        <div class='row'>
+            <img src="{% static 'img/default.png' %}" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class='row my-5'>
+            {% for i in topics %}
+                <div class="col-md-4 my-4" >
+                    <div class="card" >
+                        <div class="card-header">
+                            {{subject}}
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                            <p>{{i.name}}</p>
+                            <footer class="blockquote-footer"> <a href="{% url 'topic' i.id %}"><cite title="Source Title">Go here</cite></a></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
